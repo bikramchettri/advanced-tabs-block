@@ -1,0 +1,110 @@
+/* Common */
+.atbs__tabs .components-select-control {
+	flex-direction: row !important;
+	align-items: center !important;
+}
+
+.atbs__tabs .components-button.is-secondary {
+	color: #39687c !important;
+	box-shadow: inset 0 0 0 1px #daebf2 !important;
+}
+
+.atbs__tabs .components-select-control .components-flex-item {
+	flex: 1 !important;
+}
+
+.atbs__tabs .components-select-control .components-flex-item label {
+	margin: 0 !important;
+}
+
+.atbs__tabs .components-input-control__backdrop {
+	border-color: rgb(218 235 242) !important;
+}
+
+.atbs__tabs .components-base-control__label,
+.atbs__tabs .components-input-control__label {
+	font-size: 13px !important;
+	text-transform: none !important;
+	font-weight: 400 !important;
+}
+
+/* Others */
+p.atbs__label {
+	line-height: 1.5;
+	margin-bottom: 1em !important;
+	font-size: 13px;
+	text-transform: none;
+	font-weight: 400;
+}
+
+span.components-base-control__label {
+	margin-bottom: 0 !important;
+}
+
+.atbs__tabs p.components-base-control__help {
+	font-style: italic !important;
+}
+
+.atbs__tabs .components-tab-panel__tabs {
+	justify-content: space-around;
+	align-items: center;
+}
+
+.atbs__tab {
+	width: 100%;
+	justify-content: center;
+	border-top: 1px solid #e0e0e0;
+}
+
+.atbs__tab:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.atbs__tab.atbs__middle {
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+}
+
+.atbs__tab.active_tab {
+	border-top: 2px solid #38687c;
+	color: #38687c;
+	background: rgb(181 215 228 / 50%);
+}
+
+/* Icons Panel */
+.atbs__icons_panel .components-button-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.atbs__icons_panel .components-button-group .components-button {
+	width: 15%;
+	text-align: center;
+	line-height: 100%;
+	margin: 5px;
+}
+
+.atbs__tabs {
+	.components-tip p {
+		font-size: 12px;
+		font-style: italic;
+		line-height: 1.4;
+	}
+	.components-tip svg {
+		fill: #39687c;
+		margin-right: 10px;
+	}
+	.components-tip {
+		margin-bottom: 16px;
+	}
+}
+
+span.atbs__pro-badge {
+	display: inline-block;
+	background: #ffffff;
+	color: #f00;
+	margin-left: 5px;
+}

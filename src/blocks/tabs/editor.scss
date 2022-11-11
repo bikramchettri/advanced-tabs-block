@@ -1,0 +1,27 @@
+/*
+* Style Works for Editor Only
+*/
+
+.atbs__divider {
+	width: 100%;
+	height: 1px;
+	background-color: #e7e7e7;
+	margin: 16px 0;
+}
+
+.wp-block-atbs-tabs {
+	border: 1px dashed #ccc;
+	padding: 15px 15px 30px !important;
+	.wp-block-atbs-tab {
+		margin-bottom: 10px;
+		.atbs__tab_label {
+			margin: 0 !important;
+		}
+		.block-list-appender {
+			position: absolute !important;
+		}
+	}
+	.block-list-appender {
+		position: relative !important;
+	}
+}

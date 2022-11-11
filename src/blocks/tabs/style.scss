@@ -1,0 +1,90 @@
+/*
+* Style Works for both Editor and Frontend
+*/
+.wp-block-atbs-tabs {
+	overflow: hidden;
+	.wp-block-atbs-tab {
+		overflow: hidden;
+	}
+	.atbs__tab {
+		&-labels {
+			display: flex;
+			align-items: stretch;
+			margin: 0;
+			padding: 0;
+			&.left {
+				justify-content: flex-start;
+			}
+			&.center {
+				justify-content: center;
+			}
+			&.right {
+				justify-content: flex-end;
+				.atbs__tab-label:last-child {
+					border-right: 0 !important;
+				}
+			}
+			&.justify {
+				justify-content: space-between;
+				.atbs__tab-label {
+					flex-grow: 1;
+					text-align: center;
+					&:last-child {
+						border-right: 0 !important;
+					}
+				}
+			}
+			.atbs__tab-label {
+				display: inline-block;
+				list-style: none;
+				cursor: pointer;
+				margin: 0 !important;
+			}
+		}
+		&-content {
+			.atbs__tab-panel {
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
+		}
+		.wp-block-atbs-tab p {
+			margin-top: 0;
+		}
+	}
+	li.atbs__tab-label.active {
+		position: relative;
+	}
+	li.atbs__tab-label.active:after {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		content: "";
+	}
+}
+
+// Mobile View
+@media (max-width: 767px) {
+	.wp-block-atbs-tabs {
+		.atbs__tab {
+			&-labels {
+				flex-direction: column !important;
+				.atbs__tab-label {
+					border-right: 0 !important;
+					&.active {
+						&::after {
+							display: none !important;
+						}
+					}
+					&:last-child {
+						border-bottom: 0 !important;
+					}
+					&:first-child {
+						border-left: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}

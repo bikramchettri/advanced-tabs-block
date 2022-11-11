@@ -1,0 +1,106 @@
+// Input box
+.atbs_input__controls {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 24px;
+	.components-input-control {
+		border-radius: 0 !important;
+		align-items: center !important;
+		width: 25%;
+	}
+	.components-input-control:nth-child(2) {
+		margin: 0 -1px !important;
+	}
+	.components-input-control:nth-child(3) {
+		margin-right: -1px !important;
+	}
+	.components-input-control__label {
+		padding-top: 0px !important;
+		display: block;
+		font-size: 12px !important;
+		color: #757575 !important;
+		text-transform: capitalize !important;
+		font-weight: 400 !important;
+	}
+	.components-input-control__input {
+		text-align: center !important;
+	}
+
+	/* Input Linked Button */
+	.atbs__linked_settings {
+		height: 100%;
+		display: block;
+		background: #fff;
+		border: 1px solid #daebf2;
+		padding: 4px;
+		margin-left: -1px;
+		width: 20%;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.atbs__linked_settings span.dashicons {
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.atbs__linked_settings.active {
+		background: #39687c;
+		color: #fff;
+	}
+}
+
+.atbs__devices_inputs {
+	button.atbs__device.active {
+		color: #39687c;
+		font-size: 11px;
+		font-weight: 600;
+	}
+}
+
+.atbs__label_flex {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+p.atbs__label_nomargin {
+	margin: 0;
+	flex: 1;
+	font-size: 13px !important;
+	font-weight: 400 !important;
+	text-transform: none !important;
+}
+
+.atbs__devices {
+	display: flex;
+	align-items: center;
+}
+
+button.atbs__device {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+button.atbs__device.middle_device {
+	margin: 0 2px;
+}
+
+button.atbs__device svg {
+	width: 15px;
+	height: 10px;
+	fill: #d4d5ff;
+}
+
+button.atbs__device.active svg {
+	fill: #39687c;
+}
+
+.atbs__items .dashicon.dashicons {
+	font-size: 16px;
+	line-height: 20px;
+	color: #39687c;
+}
