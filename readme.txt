@@ -2,8 +2,8 @@
 Contributors: binsaifullah
 Tags: tabs block, tab block, Advanced tabs block, Gutenberg Block, Custom block
 Requires at least: 5.0
-Tested up to: 6.1.0
-Stable tag: 1.1.0
+Tested up to: 6.1.1
+Stable tag: 1.1.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,7 +56,9 @@ No, it is built with 100% Gutenberg Native Components only.
 
 
 == Changelog ==
-1.1.0 - 2022-11-11
+1.1.2
+* Fixed: Some minor bugs
+1.1.0
 * Added: New Styles for Tabs
 1.0.0 - Initial Release
 

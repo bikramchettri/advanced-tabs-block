@@ -171,7 +171,7 @@ class ATGB_Admin_Page {
                                         <div class="change__log_body">
                                             <div class="single__log">
                                                 <div class="plugin__info">
-                                                    <span class="log__version">2.0.0</span>
+                                                    <span class="log__version">1.1.0</span>
                                                     <span class="log__date">2022-11-11</span>
                                                 </div>
                                                 <div class="log__description">

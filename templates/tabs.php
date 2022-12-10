@@ -19,39 +19,39 @@
 
     // container 
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.'{';
-        if( $attributes['enableContainerLinkedBorderRadius']) {
+        if( isset($attributes['enableContainerLinkedBorderRadius'])) {
             $atbs_css .= 'border-radius: '.$attributes['containerLinkedBorderRadius'].'px;';
         } else {
             $atbs_css .= 'border-radius: '.$attributes['containerTopBorderRadius'].'px '.$attributes['containerRightBorderRadius'].'px '.$attributes['containerBottomBorderRadius'].'px '.$attributes['containerLeftBorderRadius'].'px;';
         }
 
-        if($attributes['contentBorderStyle'] != 'none'){
+        if(isset($attributes['contentBorderStyle']) && $attributes['contentBorderStyle'] != 'none'){
             $atbs_css .= 'border-color: '.$attributes['containerBorderColor'].';';
             $atbs_css .= 'border-style: '.$attributes['containerBorderStyle'].';';
-            if( $attributes['enableContainerLinkedBorder']){
+            if( isset($attributes['enableContainerLinkedBorder'])){
                 $atbs_css .= 'border-width: '.$attributes['containerLinkedBorderWidth'].'px;';
             }else {
                 $atbs_css .= 'border-width: '.$attributes['containerTopBorderWidth'].'px' . ' ' . $attributes['containerRightBorderWidth'].'px' . ' ' . $attributes['containerBottomBorderWidth'].'px' . ' ' . $attributes['containerLeftBorderWidth'].'px;';
             }
         }
 
-        if($attributes['enableContainerBoxShadow']){
+        if(isset($attributes['enableContainerBoxShadow'])){
             $atbs_css .= 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);';
         }
     $atbs_css .= '}';
 
     // separator 
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-labels{';
-        if( $attributes['showSeparator']) {
+        if( isset($attributes['showSeparator']) ) {
             $atbs_css .= 'border-bottom: '.$attributes['separatorHeight'].'px '.$attributes['separatorStyle'].' '.$attributes['separatorColor'].';';
         }
-        if($attributes['labelsBg']){
+        if(isset($attributes['labelsBg'])){
             $atbs_css .= 'background-color: '.$attributes['labelsBg'].';';
         }
     $atbs_css .= '}';
     
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-labels.center .atbs__tab-label:first-child{';
-        if($attributes['addLabelsSeparator']){
+        if(isset($attributes['addLabelsSeparator'])){
             $atbs_css .= 'border-left-color: '.$attributes['labelsSeparatorColor'].';';
             $atbs_css .= 'border-left-style: '.$attributes['labelsSeparatorStyle'].';';
             $atbs_css .= 'border-left-width: '.$attributes['labelsSeparatorWidth'].'px;';
@@ -59,7 +59,7 @@
     $atbs_css .= '}';
 
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-labels.right .atbs__tab-label:first-child{';
-        if($attributes['addLabelsSeparator']){
+        if(isset($attributes['addLabelsSeparator'])){
             $atbs_css .= 'border-left-color: '.$attributes['labelsSeparatorColor'].';';
             $atbs_css .= 'border-left-style: '.$attributes['labelsSeparatorStyle'].';';
             $atbs_css .= 'border-left-width: '.$attributes['labelsSeparatorWidth'].'px;';
@@ -68,41 +68,41 @@
 
     // single label separator  
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label{';
-        if($attributes['addLabelsSeparator']){
+        if(isset($attributes['addLabelsSeparator'])){
             $atbs_css .= 'border-right-color: '.$attributes['labelsSeparatorColor'].';';
             $atbs_css .= 'border-right-style: '.$attributes['labelsSeparatorStyle'].';';
             $atbs_css .= 'border-right-width: '.$attributes['labelsSeparatorWidth'].'px;';
         }
-        if($attributes['labelsColor']){
+        if(isset($attributes['labelsColor'])){
             $atbs_css .= 'color: '.$attributes['labelsColor'].';';
         }
     $atbs_css .= '}';
 
     // content Padding
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-content{';
-        if($attributes['tabsContentColor']){
+        if(isset($attributes['tabsContentColor'])){
             $atbs_css .= 'color: '.$attributes['tabsContentColor'].';';
         }
-        if($attributes['tabsContentBg']){
+        if(isset($attributes['tabsContentBg'])){
             $atbs_css .= 'background-color: '.$attributes['tabsContentBg'].';';
         }
     $atbs_css .= '}';
 
     // active tab colors/bg  
     $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label.active{';
-        if($attributes['activeTabColor']){
+        if(isset($attributes['activeTabColor'])){
             $atbs_css .= 'color: '.$attributes['activeTabColor'].' !important;';
         }
-        if($attributes['activeTabBg']){
+        if(isset($attributes['activeTabBg'])){
             $atbs_css .= 'background-color: '.$attributes['activeTabBg'].' !important;';
         }
     $atbs_css .= '}';
 
-    if($attributes['makeActiveTabSeparateLess']){
+    if(isset($attributes['makeActiveTabSeparateLess'])){
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label.active:after{';
             $atbs_css .= 'bottom: -'.$attributes['separatorHeight'].'px!important;';
             $atbs_css .= 'height: '.$attributes['separatorHeight'].'px!important;';
-            if($attributes['activeTabBg']) {
+            if(isset($attributes['activeTabBg'])) {
                 $atbs_css .= 'background-color: '.$attributes['activeTabBg'].';';
             }
         $atbs_css .= '}';
@@ -115,13 +115,17 @@
     $atbs_css .= '@media only screen and (min-width: 1025px) {';
         // Container Margin
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.'{';
-            $atbs_css .= 'margin-top: '.$attributes['containerDeskTopMargin'].'px;';
-            $atbs_css .= 'margin-bottom: '.$attributes['containerDeskBottomMargin'].'px;';
+            if(isset($attributes['containerDeskTopMargin'])){
+                $atbs_css .= 'margin-top: '.$attributes['containerDeskTopMargin'].'px;';
+            }
+            if(isset($attributes['containerDeskBottomMargin'])){
+                $atbs_css .= 'margin-bottom: '.$attributes['containerDeskBottomMargin'].'px;';
+            }
         $atbs_css .= '}';
 
         // labels Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label{';
-            if($attributes['enableLinkedDeskPadding']){
+            if(isset($attributes['enableLinkedDeskPadding'])){
                 $atbs_css .= 'padding: '.$attributes['labelsLinkedDeskPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['labelsDeskPaddingTop'].'px;';
@@ -133,7 +137,7 @@
 
         // content Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-content{';
-            if($attributes['enableLinkedContentDeskPadding']){
+            if(isset($attributes['enableLinkedContentDeskPadding'])){
                 $atbs_css .= 'padding: '.$attributes['tabsContentLinkedDeskPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['tabsContentDeskPaddingTop'].'px;';
@@ -151,13 +155,17 @@
     
     $atbs_css .= '@media only screen and (min-width: 768px) and (max-width: 1024px) {';
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.'{';
-            $atbs_css .= 'margin-top: '.$attributes['containerTabTopMargin'].'px;';
-            $atbs_css .= 'margin-bottom: '.$attributes['containerTabBottomMargin'].'px;';
+            if(isset($attributes['containerTabTopMargin'])){
+                $atbs_css .= 'margin-top: '.$attributes['containerTabTopMargin'].'px;';
+            }
+            if(isset($attributes['containerTabBottomMargin'])){
+                $atbs_css .= 'margin-bottom: '.$attributes['containerTabBottomMargin'].'px;';
+            }
         $atbs_css .= '}';
 
         // labels Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label{';
-            if($attributes['enableLinkedTabPadding']){
+            if(isset($attributes['enableLinkedTabPadding'])){
                 $atbs_css .= 'padding: '.$attributes['labelsLinkedTabPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['labelsTabPaddingTop'].'px;';
@@ -169,7 +177,7 @@
 
         // content Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-content{';
-            if($attributes['enableLinkedContentTabPadding']){
+            if(isset($attributes['enableLinkedContentTabPadding'])){
                 $atbs_css .= 'padding: '.$attributes['tabsContentLinkedTabPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['tabsContentTabPaddingTop'].'px;';
@@ -187,13 +195,17 @@
 
     $atbs_css .= '@media only screen and (max-width: 767px) {';
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.'{';
-            $atbs_css .= 'margin-top: '.$attributes['containerMobTopMargin'].'px;';
-            $atbs_css .= 'margin-bottom: '.$attributes['containerMobBottomMargin'].'px;';
+            if(isset($attributes['containerMobTopMargin'])){
+                $atbs_css .= 'margin-top: '.$attributes['containerMobTopMargin'].'px;';
+            }
+            if(isset($attributes['containerMobBottomMargin'])){
+                $atbs_css .= 'margin-bottom: '.$attributes['containerMobBottomMargin'].'px;';
+            }
         $atbs_css .= '}';
 
         // labels Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label {';
-            if($attributes['enableLinkedMobPadding']){
+            if(isset($attributes['enableLinkedMobPadding'])){
                 $atbs_css .= 'padding: '.$attributes['labelsLinkedMobPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['labelsMobPaddingTop'].'px;';
@@ -205,19 +217,19 @@
 
         // border bottom for single label 
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-label{';
-            if($attributes['addLabelsSeparator']){
+            if(isset($attributes['addLabelsSeparator'])){
                 $atbs_css .= 'border-bottom-color: '.$attributes['labelsSeparatorColor'].';';
                 $atbs_css .= 'border-bottom-style: '.$attributes['labelsSeparatorStyle'].';';
                 $atbs_css .= 'border-bottom-width: '.$attributes['labelsSeparatorWidth'].'px;';
             }
-            if($attributes['labelsColor']){
+            if(isset($attributes['labelsColor'])){
                 $atbs_css .= 'color: '.$attributes['labelsColor'].';';
             }
         $atbs_css .= '}';
 
         // content Padding
         $atbs_css .= '.wp-block-atbs-tabs.'.$handle.' .atbs__tab-content{';
-            if($attributes['enableLinkedContentMobPadding']){
+            if(isset($attributes['enableLinkedContentMobPadding'])){
                 $atbs_css .= 'padding: '.$attributes['tabsContentLinkedMobPadding'].'px;';
             }else {
                 $atbs_css .= 'padding-top: '.$attributes['tabsContentMobPaddingTop'].'px;';
